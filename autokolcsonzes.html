@@ -1,0 +1,82 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta lang="hu">
+<title>Autokölcsönzési ürlap</title>
+<style>
+div{width:500px; margin-left:auto;margin-right:auto;border:1px solid red;}
+</style>
+</head>
+<body>
+<div>
+<form>
+<fieldset>
+<legend>Autókölcsönzést ürlap</legend>
+<label for="name">Név</label>
+<input type="text" id="name"><br>
+<label for="address">Cim</label>
+<input type="text" id="address"><br>
+<label for="select">Válasszon kategoriát</label><br>
+<input type="radio" name="select" id="select"><label for="select">Kérem válasszon</label><br>
+<input type="radio" name="select" id="a" value="80000"><label for="a">A kategoria</label><br>
+<input type="radio" name="select" id="b" value="20000"><label for="b">B kategira</label><br>
+<input type="radio" name="select" id="c" value="10000"><label for="c">C kategora</label><br>
+<label for="tipus">Milyen tipusu autót szeretne</label><br>
+<select name="autotipus" id="autotipus"><br>
+<option value="choice">-- kérem válasszon --</option>
+<option value="BMV">BMV</option>
+<option value="Fiat">Fiat</option>
+<option value="Ford">Ford</option>
+<option value="Mercedes">Mercedes</option>
+<option value="opel">Opel</option>
+<option value="renault">Renault</option>
+<option value="rollsrolls">Rolls Royce</option>
+<option value="skoda">Skoda</option>
+<option value="Suzuki">Suzuki</option>
+<option value="Toyota">Toyota</option>
+</select><br>
+<label id="comment">Megjegyzés</label><br>
+<textarea id="comment" cols="10" rows="5"></textarea><br>
+<input type="button" onclick="eredmeny();" value="Elküldés">
+<label id="request"></label>
+</form>
+</div>
+<script>
+function eredmeny(){
+
+var nev=document.getElementById('name').value;
+<!-- var ar=document.querySelector('input[type="radio"]').value;-->
+//var string=document.querySelectorAll('input[type="radio"]'.checked);
+//for(var i=0; i < 10; i++)
+//{console.log(string[i]);}
+//console.log(nev + ar);
+//document.getElementById('request').innerHTML="Tisztelt "+ nev+"<br>Az ön által választott gébjármü ára: "+ar+" Forint/nap";
+var ar=0;
+
+if(document.getElementById('a').checked)
+{
+ar=document.getElementById('a').value;
+document.getElementById('request').innerHTML='Tisztelt: '+nev+'<br>Az ön által bárelt autó ára: '+ar+' Forint/nap';
+}
+if(document.getElementById('b').checked)
+{
+ar=document.getElementById('b').value;
+document.getElementById('request').innerHTML='Tisztelt: '+nev+'<br>Az ön által bárelt autó ára: '+ar+' Forint/nap';
+}
+if(document.getElementById('c').checked)
+{
+ar=document.getElementById('c').value;
+document.getElementById('request').innerHTML='Tisztelt: '+nev+'<br>Az ön által bárelt autó ára: '+ar+' Forint/nap';
+}
+
+
+//{document.getElementById('request').innerHTML('Nem választott értéket');
+}
+	
+
+
+
+
+</script>
+</body>
+</html>

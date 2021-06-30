@@ -1,0 +1,59 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta lang="hu">
+<meta name="author" content="Albert Attila">
+<title>Fej vagy irás</title>
+<style>
+div{
+width:500px;
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+border:2px solid blue;
+border-radius:20px;
+
+}
+h1{
+color:white;
+background-color:blue;
+}
+img{
+margin-left:auto;
+margin-right:auto;
+width:150px;
+height:150px;
+}
+
+
+
+</style>
+</head>
+<body>
+<div>
+<h1>Fej vagy irás</h1>
+<form>
+<input type="button" id="button" value="Fej vagy irás" onclick="headorwrite();">
+<label id="screen"></label>
+</form>
+<img id="kep">
+<script>
+function headorwrite(){
+
+var dobas=Math.floor(Math.random()*(2-1+1))+1;
+console.log(dobas)
+if(dobas==1)
+{
+document.querySelector('img').src="forras_kepek/fej.jpg";
+document.getElementById('screen').innerHTML="Fej";
+}else{
+document.querySelector('img').src="forras_kepek/iras.jpg";
+document.getElementById('screen').innerHTML="Irás";
+}
+}
+
+
+</script>
+</div>
+</body>
+</html>
